@@ -24,6 +24,12 @@ while True:
         print("euccessfilly added")
     if(choice==2):
         print("view recipe")
+        print("view blooddonor")
+        sql='SELECT * FROM `recipe`' 
+        mycursor.execute(sql)
+        result=mycursor.fetchall()
+        for i in result:
+            print(i)
     elif(choice==3):
         print('search recipe')
     elif(choice==4):
