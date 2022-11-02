@@ -8,7 +8,9 @@ while True:
     print('3 search  recipe details')
     print('4 update recipe details')
     print('5 delete recipe details')
-    print('6 exit')
+    print('6 total price')
+    print('7 name of donar with starting letter')
+    print('8 exit')
     
     choice=int(input('enter the option:'))
     if(choice==1):
@@ -54,4 +56,13 @@ while True:
         mycursor.execute(sql)
         mydb.commit()
     elif(choice==6):
-        break  
+        print("total price")
+        sql="SELECT AVG(`price`) FROM `recipe`"
+        mycursor.execute(sql) 
+        result=mycursor.fetchall()
+        print(result)
+    elif(choice==7):
+        print("name of donar with starting letter")
+    elif(choice==8):
+        break
+        
