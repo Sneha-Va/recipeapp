@@ -49,5 +49,9 @@ while True:
         print('update recipe')
     elif(choice==5):
         print('delete recipe')
+        recipename=input("enter recipename:")
+        sql="DELETE FROM `recipe` WHERE `recipename`='"+recipename+"'"
+        mycursor.execute(sql)
+        mydb.commit()
     elif(choice==6):
         break  
