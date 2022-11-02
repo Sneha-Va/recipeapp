@@ -32,6 +32,11 @@ while True:
             print(i)
     elif(choice==3):
         print('search recipe')
+        recipename=input("enter recipe :")
+        sql="SELECT `id`, `recipename`, `preparedby`, `ingredients`, `price` FROM `recipe` WHERE `recipename`='"+recipename+"'"
+        mycursor.execute(sql)
+        result=mycursor.fetchall()
+        print(result)
     elif(choice==4):
         print('update recipe')
     elif(choice==5):
