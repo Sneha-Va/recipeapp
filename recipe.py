@@ -38,6 +38,14 @@ while True:
         result=mycursor.fetchall()
         print(result)
     elif(choice==4):
+        recipename=input('enter recipe :')
+        preparedby=input('enter name to be updated:')
+        ingredients=input("enter ingredient to be updated:")
+        price=input("enter price to be updated:")
+        sql="UPDATE `recipe` SET `recipename`='"+recipename+"',`preparedby`='"+preparedby+"',`ingredients`='"+ingredients+"',`price`='"+price+"' WHERE `recipename`= '"+recipename+"'"
+        mycursor.execute(sql)
+        mydb.commit()
+        print("data successfully updated")
         print('update recipe')
     elif(choice==5):
         print('delete recipe')
